@@ -68,16 +68,15 @@ public class NettyServer {
 					new ThreadFactoryImpl(config.getName() + "_acceptor", true));
 			worker = new EpollEventLoopGroup(config.getAccepts(),
 					new ThreadFactoryImpl(config.getName() + "_worker", true));
-			bootstrap.group(boss, worker);
 			bootstrap.childHandler(new ChildHandlerInitializer<EpollSocketChannel>(handler));
 		} else {
 			boss = new NioEventLoopGroup(config.getAccepts(),
 					new ThreadFactoryImpl(config.getName() + "_acceptor", true));
 			worker = new NioEventLoopGroup(config.getAccepts(),
 					new ThreadFactoryImpl(config.getName() + "_worker", true));
-			bootstrap.group(boss, worker);
 			bootstrap.childHandler(new ChildHandlerInitializer<SocketChannel>(handler));
 		}
+		bootstrap.group(boss, worker);
 		bootstrap.option(ChannelOption.SO_BACKLOG, config.getBlockLog())
 				.option(ChannelOption.TCP_NODELAY, config.isNoDelay())
 				.option(ChannelOption.SO_REUSEADDR, config.isReUseAddr())
