@@ -32,7 +32,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
  * </pre>
  * 
  * <pre>
- * <b>内容：</b>版本号+请求编号+类名称+长度+实体序列化内容+(attachments: len (key value)*)
+ * <b>内容：</b>版本号+请求编号+长度+实体序列化内容+(attachments: len (key value)*)
  * </pre>
  * 
  * @author kanven
