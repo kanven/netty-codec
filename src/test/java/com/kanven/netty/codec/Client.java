@@ -49,7 +49,7 @@ public class Client {
 		message.setCid(1);
 		message.setContent("我是中国人，我爱中华人民共和国❤️!");
 		req.setBody(message);
-		Map<String, String> attachments = new HashMap<>();
+		Map<String, String> attachments = new HashMap<String, String>();
 		attachments.put("x", "1");
 		attachments.put("y", "2");
 		req.setAttachments(attachments);

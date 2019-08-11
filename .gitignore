@@ -1,4 +1,9 @@
-/target/
-.idea/
+.classpath
 .settings/
-netty-code.iml
+.metadata/
+.project
+logs/
+target/
+.idea/
+*.iml
+
