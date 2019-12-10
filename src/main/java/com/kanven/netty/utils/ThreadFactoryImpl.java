@@ -19,6 +19,10 @@ public class ThreadFactoryImpl implements ThreadFactory {
 	private AtomicInteger number = new AtomicInteger(0);
 
 	private ThreadGroup group;
+	
+	public ThreadFactoryImpl(String prefix){
+		this(prefix, false);
+	}
 
 	public ThreadFactoryImpl(String prefix, boolean deamon) {
 		this.prefix = prefix;

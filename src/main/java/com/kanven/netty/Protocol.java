@@ -4,31 +4,45 @@ import java.io.Serializable;
 
 public class Protocol implements Serializable {
 
-	private static final long serialVersionUID = 6457472033930708474L;
+    private static final long serialVersionUID = 6457472033930708474L;
 
-	private long seq;
+    private long seq;
 
-	private Object body;
+    private Object body;
 
-	public long getSeq() {
-		return seq;
-	}
+    private long sessionId = -1;
 
-	public void setSeq(long seq) {
-		this.seq = seq;
-	}
+    public long getSeq() {
+        return seq;
+    }
 
-	public Object getBody() {
-		return body;
-	}
+    public void setSeq(long seq) {
+        this.seq = seq;
+    }
 
-	public void setBody(Object body) {
-		this.body = body;
-	}
+    public Object getBody() {
+        return body;
+    }
 
-	@Override
-	public String toString() {
-		return "Protocol [seq=" + seq + ", body=" + body + "]";
-	}
+    public void setBody(Object body) {
+        this.body = body;
+    }
+
+    public long getSessionId() {
+        return sessionId;
+    }
+
+    public void setSessionId(long sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    @Override
+    public String toString() {
+        return "Protocol{" +
+                "seq=" + seq +
+                ", body=" + body +
+                ", sessionId=" + sessionId +
+                '}';
+    }
 
 }

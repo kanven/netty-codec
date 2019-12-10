@@ -8,6 +8,7 @@ import com.kanven.netty.Resp;
 import com.kanven.netty.entites.Result;
 
 import io.netty.bootstrap.ServerBootstrap;
+import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.ChannelInitializer;
@@ -54,7 +55,8 @@ public class Server {
 				});
 			}
 		});
-		bootstrap.bind(9090).sync();
+		ChannelFuture future = bootstrap.bind(9090);
+		future.sync();
 	}
 
 }
